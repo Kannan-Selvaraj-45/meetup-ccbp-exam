@@ -12,7 +12,7 @@ import {
   Image,
   Name,
   Topic,
-} from './styledComponent'
+} from './style'
 
 const Home = props => {
   const onRegister = () => {

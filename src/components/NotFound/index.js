@@ -1,9 +1,4 @@
-import {
-  NotFoundContainer,
-  NotFoundHeading,
-  NotFoundPara,
-  Img,
-} from './styledComponents'
+import {NotFoundContainer, NotFoundHeading, NotFoundPara, Img} from './style'
 
 const NotFound = () => (
   <NotFoundContainer>

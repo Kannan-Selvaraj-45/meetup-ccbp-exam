@@ -1,6 +1,6 @@
 import {Link} from 'react-router-dom'
 
-import {Nav, Logo} from './styledComponents'
+import {Nav, Logo} from './style'
 
 const Header = () => (
   <Nav>
