@@ -14,6 +14,29 @@ import {
   Topic,
 } from './style'
 
+const topicsList = [
+  {
+    id: 'ARTS_AND_CULTURE',
+    displayText: 'Arts and Culture',
+  },
+  {
+    id: 'CAREER_AND_BUSINESS',
+    displayText: 'Career and Business',
+  },
+  {
+    id: 'EDUCATION_AND_LEARNING',
+    displayText: 'Education and Learning',
+  },
+  {
+    id: 'FASHION_AND_BEAUTY',
+    displayText: 'Fashion and Beauty',
+  },
+  {
+    id: 'GAMES',
+    displayText: 'Games',
+  },
+]
+
 const Home = props => {
   const onRegister = () => {
     const {history} = props
@@ -24,7 +47,12 @@ const Home = props => {
     <RegisterContext.Consumer>
       {value => {
         const {isRegistered, name, topic} = value
-        console.log(isRegistered)
+
+        // Find the displayText for the current topic
+        const currentTopic =
+          topicsList.find(item => item.id === topic)?.displayText ||
+          'Arts and Culture'
+
         return (
           <div>
             <Header />
@@ -32,7 +60,7 @@ const Home = props => {
             {isRegistered === true ? (
               <HomeContainer>
                 <Name>Hello {name}</Name>
-                <Topic>Welcome to {topic}</Topic>
+                <Topic>Welcome to {currentTopic}</Topic>
                 <Image
                   src="https://assets.ccbp.in/frontend/react-js/meetup/meetup-img.png"
                   alt="meetup"
